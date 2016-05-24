@@ -12,6 +12,7 @@
 
     <modules>
         <module>dotp-core</module>
+        <module>dotp-web</module>
     </modules>
 
     <profiles>
