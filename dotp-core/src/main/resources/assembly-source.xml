@@ -1,0 +1,21 @@
+<assembly>
+    <id>jar-source</id>
+    <formats>
+        <format>jar</format>
+    </formats>
+    <fileSets>
+        <fileSet>
+            <directory>${project.basedir}</directory>
+            <outputDirectory>/</outputDirectory>
+            <includes>
+                <include>**</include>
+            </includes>
+            <excludes>
+                <exclude>*.iml</exclude>
+                <exclude>/target/**</exclude>
+                <exclude>/src/main/resources/assembly-source.xml</exclude>
+                <exclude>/src/main/resources/assembly-release.xml</exclude>
+            </excludes>
+        </fileSet>
+    </fileSets>
+</assembly>

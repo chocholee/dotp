@@ -1,0 +1,32 @@
+<assembly>
+    <id>jar-release</id>
+    <formats>
+        <format>jar</format>
+    </formats>
+    <fileSets>
+        <fileSet>
+            <directory>${project.basedir}/target/classes</directory>
+            <outputDirectory>/classes</outputDirectory>
+            <includes>
+                <include>**</include>
+            </includes>
+            <excludes>
+                <exclude>*.xml</exclude>
+                <exclude>*.properties</exclude>
+            </excludes>
+        </fileSet>
+        <fileSet>
+            <directory>${project.basedir}/target/classes</directory>
+            <outputDirectory>/config</outputDirectory>
+            <includes>
+                <include>*.xml</include>
+                <include>*.properties</include>
+            </includes>
+            <excludes>
+                <exclude>*.class</exclude>
+                <exclude>assembly-source.xml</exclude>
+                <exclude>assembly-release.xml</exclude>
+            </excludes>
+        </fileSet>
+    </fileSets>
+</assembly>
