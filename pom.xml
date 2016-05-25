@@ -65,6 +65,7 @@
         <version.spring>4.2.6.RELEASE</version.spring>
         <version.spring.data.mongodb>1.9.1.RELEASE</version.spring.data.mongodb>
         <version.mongodb>3.2.2</version.mongodb>
+        <version.velocity>1.7</version.velocity>
 
         <!-- plugins -->
         <version.assembly.plugin>2.6</version.assembly.plugin>
@@ -183,6 +184,14 @@
                 <version>${version.mongodb}</version>
             </dependency>
             <!-- End mongodb -->
+
+            <!-- velocity -->
+            <dependency>
+                <groupId>org.apache.velocity</groupId>
+                <artifactId>velocity</artifactId>
+                <version>${version.velocity}</version>
+            </dependency>
+            <!-- End velocity -->
         </dependencies>
     </dependencyManagement>
 
