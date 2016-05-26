@@ -89,4 +89,7 @@
         <property name="layoutUrl" value="layout.vm"/>
     </bean>
 
+    <!-- 静态资源路径 -->
+    <mvc:resources mapping="/resources/**" location="WEB-INF/resources/"/>
+
 </beans>
