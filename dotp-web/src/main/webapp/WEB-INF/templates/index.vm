@@ -1,1 +1,5 @@
+#override("title")首页#end
+#override("body")
 <h1>Hello Kitty</h1>
+#end
+#extends("decorator.vm")

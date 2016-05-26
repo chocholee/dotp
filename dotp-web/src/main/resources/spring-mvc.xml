@@ -69,7 +69,7 @@
     </bean>
 
     <!-- 视图解析器 -->
-    <bean id="viewResolver" class="org.springframework.web.servlet.view.velocity.VelocityLayoutViewResolver">
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
         <!-- 日期函数名称 -->
         <property name="dateToolAttribute" value="dateTool"/>
         <!-- 数字函数名称 -->
@@ -85,8 +85,8 @@
         <property name="requestContextAttribute" value="request"/>
         <!-- 如果存在多个视图,视图优先级 -->
         <property name="order" value="0"/>
-        <!-- 指定layout文件 -->
-        <property name="layoutUrl" value="layout.vm"/>
+        <!--&lt;!&ndash; 指定layout文件 &ndash;&gt;-->
+        <!--<property name="layoutUrl" value="layout.vm"/>-->
     </bean>
 
     <!-- 静态资源路径 -->

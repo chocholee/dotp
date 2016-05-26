@@ -6,7 +6,7 @@
     <fileSets>
         <fileSet>
             <directory>${project.basedir}/target/classes</directory>
-            <outputDirectory>/classes</outputDirectory>
+            <outputDirectory>classes</outputDirectory>
             <includes>
                 <include>**</include>
             </includes>
@@ -17,7 +17,7 @@
         </fileSet>
         <fileSet>
             <directory>${project.basedir}/target/classes</directory>
-            <outputDirectory>/config</outputDirectory>
+            <outputDirectory>config</outputDirectory>
             <includes>
                 <include>*.xml</include>
                 <include>*.properties</include>
