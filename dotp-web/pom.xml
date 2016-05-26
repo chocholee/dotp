@@ -95,7 +95,6 @@
         <dependency>
             <groupId>org.mongodb</groupId>
             <artifactId>mongo-java-driver</artifactId>
-            <version>${version.mongodb}</version>
         </dependency>
         <!-- End mongodb -->
 
@@ -103,7 +102,11 @@
         <dependency>
             <groupId>org.apache.velocity</groupId>
             <artifactId>velocity</artifactId>
-            <version>${version.velocity}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity-tools</artifactId>
         </dependency>
         <!-- End velocity -->
 
@@ -113,6 +116,13 @@
             <artifactId>commons-logging</artifactId>
         </dependency>
         <!-- End commons-logging -->
+
+        <!-- servlet -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+        </dependency>
+        <!-- End servlet -->
     </dependencies>
 
 </project>
