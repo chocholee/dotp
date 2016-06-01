@@ -67,6 +67,7 @@
         <version.commons.logging>1.2</version.commons.logging>
         <version.servlet>3.1.0</version.servlet>
         <version.axonframework>2.4.4</version.axonframework>
+        <version.persistence>1.0.2</version.persistence>
 
         <!-- plugins -->
         <version.assembly.plugin>2.6</version.assembly.plugin>
@@ -257,6 +258,14 @@
                 <version>${version.axonframework}</version>
             </dependency>
             <!-- axon framework -->
+
+            <!-- persistence for axon -->
+            <dependency>
+                <groupId>javax.persistence</groupId>
+                <artifactId>persistence-api</artifactId>
+                <version>${version.persistence}</version>
+            </dependency>
+            <!-- End persistence for axon -->
         </dependencies>
     </dependencyManagement>
 

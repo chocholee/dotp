@@ -12,9 +12,11 @@
         <property name="fileEncoding" value="utf-8"/>
         <property name="locations">
             <list>
-                <value>classpath:config.properties</value>
+                <value>classpath:config/mongo-config.properties</value>
+                <value>classpath:config/axon-config.properties</value>
             </list>
         </property>
+        <property name="localOverride" value="true"/>
     </bean>
 
     <!-- 国际化标准 -->
@@ -32,6 +34,7 @@
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
+    <import resource="spring-mongo.xml"/>
     <import resource="spring-axon.xml"/>
 
 </beans>

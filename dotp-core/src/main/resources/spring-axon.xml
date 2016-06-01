@@ -11,16 +11,11 @@
     <axon:command-bus id="commandBus"/>
     <axon:event-bus id="eventBus"/>
 
-    <!-- TODO mongo -->
-    <bean class="org.axonframework.eventstore.mongo.MongoEventStore">
-        <constructor-arg name="mongo">
-            <bean class="org.axonframework.eventstore.mongo.DefaultMongoTemplate">
-                <constructor-arg name="mongo">
-                    <bean class="com.mongodb.Mongo">
-                    </bean>
-                </constructor-arg>
-            </bean>
-        </constructor-arg>
-    </bean>
+    <!-- 注意：axon目前只支持Mongo2.x的driver，因些eventStore不采用mongo，目前采用FileSystemEventStore -->
+    <axon:filesystem-event-store base-dir="${axon.file.system.event.store}" id="eventStore"/>
+
+    <!-- event sourcing repository依赖event store -->
+    <axon:event-sourcing-repository id="eventSourcingRepository"
+                                    event-store="eventStore"/>
 
 </beans>

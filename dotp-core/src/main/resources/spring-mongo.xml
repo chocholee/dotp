@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/data/mongo
+                           http://www.springframework.org/schema/data/mongo/spring-mongo.xsd">
+
+    <!-- mongo配置 -->
+    <mongo:mongo-client id="mongo"
+                        host="${mongodb.host}"
+                        port="${mongodb.port}">
+        <mongo:client-options write-concern="${mongodb.write.concern}"
+                              connect-timeout="${mongodb.connection.timeout}"
+                              connections-per-host="${mongodb.connections.per.host}"
+                              max-wait-time="${mongodb.max.wait.time}"
+                              socket-timeout="${mongodb.socket.timeout}"/>
+    </mongo:mongo-client>
+
+    <!-- mongo factory配置 -->
+    <mongo:db-factory id="mongoDbFactory"
+                      mongo-ref="mongo"
+                      dbname="${mongoDbFactory.databaseName}"
+                      username="${mongoDbFactory.username}"
+                      password="${mongoDbFactory.password}"/>
+
+    <!-- spring mongo template -->
+    <bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+        <constructor-arg name="mongoDbFactory" ref="mongoDbFactory"/>
+        <property name="writeResultChecking" value="${mongoTemplate.writeResultChecking}"/>
+    </bean>
+
+</beans>

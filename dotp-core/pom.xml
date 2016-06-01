@@ -129,6 +129,13 @@
             <artifactId>axon-mongo</artifactId>
         </dependency>
         <!-- End axon -->
+
+        <!-- persistence for axon -->
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>persistence-api</artifactId>
+        </dependency>
+        <!-- End persistence for axon -->
     </dependencies>
 
     <build>
