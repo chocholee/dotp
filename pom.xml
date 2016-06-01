@@ -17,45 +17,44 @@
 
     <profiles>
         <profile>
-            <id>uk</id>
+            <id>douleha</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+
             <repositories>
                 <repository>
-                    <id>uk</id>
-                    <name>uk.maven.org</name>
-                    <url>http://uk.maven.org/maven2/</url>
+                    <id>douleha</id>
+                    <name>douleha</name>
+                    <url>http://114.215.121.125:8088/content/groups/public/</url>
                 </repository>
             </repositories>
+
             <pluginRepositories>
                 <pluginRepository>
-                    <id>uk</id>
-                    <name>uk.maven.org</name>
-                    <url>http://uk.maven.org/maven2/</url>
+                    <id>douleha</id>
+                    <name>douleha</name>
+                    <url>http://114.215.121.125:8088/content/groups/public/</url>
                 </pluginRepository>
             </pluginRepositories>
-        </profile>
-        <profile>
-            <id>jikapay</id>
-            <repositories>
+
+            <distributionManagement>
                 <repository>
-                    <id>Jikapay Maven Repository</id>
-                    <name>Jikapay Maven Repository</name>
-                    <url>http://nexus.jikapay.com:8099/nexus/content/groups/public/</url>
+                    <id>douleha-releases</id>
+                    <url>http://114.215.121.125:8088/content/repositories/releases/</url>
                 </repository>
-            </repositories>
-            <pluginRepositories>
-                <pluginRepository>
-                    <id>Jikapay Maven Repository</id>
-                    <name>Jikapay Maven Repository</name>
-                    <url>http://nexus.jikapay.com:8099/nexus/content/groups/public/</url>
-                </pluginRepository>
-            </pluginRepositories>
+                <snapshotRepository>
+                    <id>douleha-snapshots</id>
+                    <url>http://114.215.121.125:8088/content/repositories/snapshots/</url>
+                </snapshotRepository>
+            </distributionManagement>
         </profile>
     </profiles>
 
     <properties>
         <!-- dependency -->
         <version.log4j>1.2.17</version.log4j>
-        <version.log4j.api>2.5</version.log4j.api>
+        <version.slf4j>1.7.21</version.slf4j>
         <version.commons.lang3>3.4</version.commons.lang3>
         <version.httpclient>3.1</version.httpclient>
         <version.testng>6.9.10</version.testng>
@@ -67,6 +66,7 @@
         <version.velocity.tools>2.0</version.velocity.tools>
         <version.commons.logging>1.2</version.commons.logging>
         <version.servlet>3.1.0</version.servlet>
+        <version.axonframework>2.4.4</version.axonframework>
 
         <!-- plugins -->
         <version.assembly.plugin>2.6</version.assembly.plugin>
@@ -87,15 +87,15 @@
             </dependency>
 
             <dependency>
-                <groupId>org.apache.logging.log4j</groupId>
-                <artifactId>log4j-api</artifactId>
-                <version>${version.log4j.api}</version>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${version.slf4j}</version>
             </dependency>
 
             <dependency>
-                <groupId>org.apache.logging.log4j</groupId>
-                <artifactId>log4j-core</artifactId>
-                <version>${version.log4j.api}</version>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-log4j12</artifactId>
+                <version>${version.slf4j}</version>
             </dependency>
             <!-- log4j -->
 
@@ -243,6 +243,20 @@
                 <version>${version.servlet}</version>
             </dependency>
             <!-- End servlet -->
+
+            <!-- axon framework -->
+            <dependency>
+                <groupId>org.axonframework</groupId>
+                <artifactId>axon-core</artifactId>
+                <version>${version.axonframework}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.axonframework</groupId>
+                <artifactId>axon-mongo</artifactId>
+                <version>${version.axonframework}</version>
+            </dependency>
+            <!-- axon framework -->
         </dependencies>
     </dependencyManagement>
 

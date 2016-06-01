@@ -28,8 +28,10 @@
     </bean>
 
     <!-- 包扫描,使用filter避免包扫描冲动 -->
-    <context:component-scan base-package="com.dotp.web" use-default-filters="false">
+    <context:component-scan base-package="com.dotp.core">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
+
+    <import resource="spring-axon.xml"/>
 
 </beans>
