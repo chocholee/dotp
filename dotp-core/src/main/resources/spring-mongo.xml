@@ -25,6 +25,8 @@
                       username="${mongoDbFactory.username}"
                       password="${mongoDbFactory.password}"/>
 
+    <mongo:repositories base-package="com.dotp.core.infrastructure"/>
+    
     <!-- spring mongo template -->
     <bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
         <constructor-arg name="mongoDbFactory" ref="mongoDbFactory"/>

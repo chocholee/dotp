@@ -14,8 +14,27 @@
     <!-- 注意：axon目前只支持Mongo2.x的driver，因些eventStore不采用mongo，目前采用FileSystemEventStore -->
     <axon:filesystem-event-store base-dir="${axon.file.system.event.store}" id="eventStore"/>
 
+    <!-- 配置taskExecutor -->
+    <bean id="taskExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+        <property name="corePoolSize" value="${axon.taskExecutor.corePoolSize}"/>
+        <property name="maxPoolSize" value="${axon.taskExecutor.maxPoolSize}"/>
+        <property name="waitForTasksToCompleteOnShutdown" value="${axon.taskExecutor.waitForTasksToCompleteOnShutdown}"/>
+    </bean>
+
+    <!-- 配置snapshotter -->
+    <axon:snapshotter id="snapshotter" event-store="eventStore" executor="taskExecutor"/>
+
     <!-- event sourcing repository依赖event store -->
-    <axon:event-sourcing-repository id="eventSourcingRepository"
-                                    event-store="eventStore"/>
+    <axon:event-sourcing-repository id="userEventSourcingRepository"
+                                    aggregate-type="com.dotp.core.facade.entities.User"
+                                    event-store="eventStore">
+        <axon:snapshotter-trigger event-count-threshold="${axon.eventSourcingRepository.event.count.threshold}" snapshotter-ref="snapshotter"/>
+    </axon:event-sourcing-repository>
+
+    <axon:saga-manager id="sagaManager" event-bus="eventBus">
+        <axon:types>
+            com.dotp.core.facade.handler.event.UserEventHandler
+        </axon:types>
+    </axon:saga-manager>
 
 </beans>

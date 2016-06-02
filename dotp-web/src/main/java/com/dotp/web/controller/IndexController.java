@@ -1,13 +1,12 @@
 package com.dotp.web.controller;
 
-import com.dotp.core.command.user.CreateUserCommand;
+import com.dotp.core.facade.command.user.UserCreateCommand;
 import org.axonframework.commandhandling.CommandBus;
 import org.axonframework.commandhandling.GenericCommandMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
 /**
  * Created by sherw on 2016/5/25.
@@ -26,8 +25,8 @@ public class IndexController {
     @RequestMapping("/test")
     @ResponseBody
     public void test() {
-        CreateUserCommand command = new CreateUserCommand();
-        command.setUsername("liwenhe");
+        UserCreateCommand command = new UserCreateCommand();
+        command.setUsername("shouwei4");
         command.setPassword("123123");
         commandBus.dispatch(new GenericCommandMessage<Object>(command));
     }

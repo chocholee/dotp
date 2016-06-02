@@ -1,9 +1,9 @@
-package com.dotp.core.event.user;
+package com.dotp.core.facade.command.user;
 
 /**
  * Created by sherw on 2016/6/1.
  */
-public class CreateUserEvent {
+public class UserCreateCommand {
 
     private String username;
 

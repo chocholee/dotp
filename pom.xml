@@ -68,6 +68,8 @@
         <version.servlet>3.1.0</version.servlet>
         <version.axonframework>2.4.4</version.axonframework>
         <version.persistence>1.0.2</version.persistence>
+        <version.querydsl>3.7.3</version.querydsl>
+        <version.querydsl.mongo>4.1.2</version.querydsl.mongo>
 
         <!-- plugins -->
         <version.assembly.plugin>2.6</version.assembly.plugin>
@@ -266,6 +268,19 @@
                 <version>${version.persistence}</version>
             </dependency>
             <!-- End persistence for axon -->
+
+            <!-- querydls for query -->
+            <dependency>
+                <groupId>com.mysema.querydsl</groupId>
+                <artifactId>querydsl-core</artifactId>
+                <version>${version.querydsl}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.querydsl</groupId>
+                <artifactId>querydsl-mongodb</artifactId>
+                <version>${version.querydsl.mongo}</version>
+            </dependency>
+            <!-- End querydls for query -->
         </dependencies>
     </dependencyManagement>
 

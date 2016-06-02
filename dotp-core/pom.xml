@@ -136,6 +136,24 @@
             <artifactId>persistence-api</artifactId>
         </dependency>
         <!-- End persistence for axon -->
+
+        <!-- querydls for query -->
+        <dependency>
+            <groupId>com.mysema.querydsl</groupId>
+            <artifactId>querydsl-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.querydsl</groupId>
+            <artifactId>querydsl-mongodb</artifactId>
+        </dependency>
+        <!-- End querydls for query -->
+
+        <!-- servlet -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+        </dependency>
+        <!-- End servlet -->
     </dependencies>
 
     <build>
