@@ -1,7 +1,7 @@
 package com.dotp.core.domain.service.user;
 
 import com.dotp.core.domain.model.user.IUserEntryRepository;
-import com.dotp.core.domain.model.user.UserEntry;
+import com.dotp.core.domain.model.user.UserEntity;
 import com.dotp.core.facade.event.user.UserCreateEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,12 +13,10 @@ import org.springframework.stereotype.Service;
 public class UserEntryService implements IUserEntryService {
 
     @Autowired
-    private IUserEntryRepository<UserEntry, String> userEntryRepository;
+    private IUserEntryRepository<UserEntity, String> userEntryRepository;
 
     @Override
-    public UserEntry save(UserCreateEvent event) {
-        UserEntry userEntry = new UserEntry(event.getUsername(), event.getPassword());
-        userEntryRepository.save(userEntry);
-        return userEntry;
+    public UserEntity save(UserCreateEvent event) {
+        return null;
     }
 }

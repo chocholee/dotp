@@ -1,6 +1,6 @@
 package com.dotp.core.domain.service.user;
 
-import com.dotp.core.domain.model.user.UserEntry;
+import com.dotp.core.domain.model.user.UserEntity;
 import com.dotp.core.facade.event.user.UserCreateEvent;
 
 /**
@@ -8,6 +8,6 @@ import com.dotp.core.facade.event.user.UserCreateEvent;
  */
 public interface IUserEntryService {
 
-    UserEntry save(UserCreateEvent event);
+    UserEntity save(UserCreateEvent event);
 
 }

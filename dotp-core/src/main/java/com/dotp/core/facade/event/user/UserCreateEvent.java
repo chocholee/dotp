@@ -9,9 +9,6 @@ public class UserCreateEvent {
 
     private String password;
 
-    public UserCreateEvent() {
-    }
-
     public UserCreateEvent(String username, String password) {
         this.username = username;
         this.password = password;
@@ -25,11 +22,4 @@ public class UserCreateEvent {
         return password;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 }

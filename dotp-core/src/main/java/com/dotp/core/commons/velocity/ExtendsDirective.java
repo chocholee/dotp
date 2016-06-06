@@ -1,4 +1,4 @@
-package com.dotp.core.utils.velocity;
+package com.dotp.core.commons.velocity;
 
 import org.apache.velocity.runtime.directive.Parse;
 

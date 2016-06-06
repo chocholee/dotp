@@ -1,8 +1,7 @@
-package com.dotp.core.utils.velocity;
+package com.dotp.core.commons.velocity;
 
 import org.apache.velocity.context.InternalContextAdapter;
 import org.apache.velocity.exception.ParseErrorException;
-import org.apache.velocity.runtime.parser.Parser;
 import org.apache.velocity.runtime.parser.node.Node;
 import org.apache.velocity.runtime.parser.node.SimpleNode;
 
